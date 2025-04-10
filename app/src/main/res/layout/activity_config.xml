@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <EditText
+        android:id="@+id/inputDollar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="设置美元汇率"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/inputEuro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="设置欧元汇率"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/inputWon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="设置韩元汇率"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SAVE"
+        android:background="#FFA500"
+        android:textColor="@android:color/black" />
+</LinearLayout>
