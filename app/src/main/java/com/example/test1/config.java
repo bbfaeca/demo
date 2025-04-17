@@ -1,11 +1,9 @@
 package com.example.test1;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.*;
 
 public class config extends AppCompatActivity {
 
@@ -21,24 +19,27 @@ public class config extends AppCompatActivity {
         inputEuro = findViewById(R.id.inputEuro);
         inputWon = findViewById(R.id.inputWon);
         btnSave = findViewById(R.id.btnSave);
+        Intent intent = getIntent();
+        float oldDollar = intent.getFloatExtra("dollar_rate_key", 0.14f);
+        float oldEuro = intent.getFloatExtra("euro_rate_key", 0.13f);
+        float oldWon = intent.getFloatExtra("won_rate_key", 160f);
+
+        inputDollar.setText(String.valueOf(oldDollar));
+        inputEuro.setText(String.valueOf(oldEuro));
+        inputWon.setText(String.valueOf(oldWon));
 
         btnSave.setOnClickListener(v -> {
-            String dollar = inputDollar.getText().toString();
-            String euro = inputEuro.getText().toString();
-            String won = inputWon.getText().toString();
+            float newDollar = Float.parseFloat(inputDollar.getText().toString());
+            float newEuro = Float.parseFloat(inputEuro.getText().toString());
+            float newWon = Float.parseFloat(inputWon.getText().toString());
 
-            SharedPreferences prefs = getSharedPreferences("Rates", MODE_PRIVATE);
-            SharedPreferences.Editor editor = prefs.edit();
-            editor.putString("rateDollar", dollar);
-            editor.putString("rateEuro", euro);
-            editor.putString("rateWon", won);
-            editor.apply();
+            Intent result = new Intent();
+            result.putExtra("key_dollar", newDollar);
+            result.putExtra("key_euro", newEuro);
+            result.putExtra("key_won", newWon);
 
-            Toast.makeText(this, "汇率已保存", Toast.LENGTH_SHORT).show();
-
-            setResult(RESULT_OK);
+            setResult(5, result);
             finish();
         });
-
     }
 }

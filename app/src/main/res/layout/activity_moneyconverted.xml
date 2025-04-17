@@ -4,64 +4,72 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
-    android:gravity="center"
     tools:context=".moneyconverted">
 
     <EditText
         android:id="@+id/editTextRMB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:hint="Input RMB"
         android:inputType="numberDecimal"
+        android:minHeight="48dp"
         android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:textSize="18sp"
-        android:minHeight="48dp"
-        android:layout_marginBottom="16dp" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textViewResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         android:text="Hello"
-        android:textSize="32sp"
         android:textColor="@android:color/black"
-        android:layout_marginBottom="32dp" />
+        android:textSize="32sp" />
 
     <Button
         android:id="@+id/btnDollar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="DOLLAR"
+        android:layout_marginBottom="8dp"
         android:background="#FFA500"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="8dp" />
+        android:text="DOLLAR"
+        android:textColor="@android:color/black" />
 
     <Button
         android:id="@+id/btnEuro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="EURO"
+        android:layout_marginBottom="8dp"
         android:background="#FFA500"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="8dp" />
+        android:text="EURO"
+        android:textColor="@android:color/black" />
 
     <Button
         android:id="@+id/btnWon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="WON"
         android:background="#FFA500"
+        android:text="WON"
         android:textColor="@android:color/black" />
+
     <Button
         android:id="@+id/btnConfig"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CONFIG"
+        android:layout_marginTop="16dp"
         android:background="#FFA500"
-        android:textColor="@android:color/black"
-        android:layout_marginTop="16dp" />
+        android:text="CONFIG"
+        android:textColor="@android:color/black" />
+    <Button
+        android:id="@+id/btnUpdateRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="更新汇率"
+        android:layout_marginTop="16dp"/>
+
 
 </LinearLayout>
